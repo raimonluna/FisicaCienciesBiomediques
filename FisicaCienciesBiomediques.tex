@@ -58,7 +58,7 @@ Universitat de Barcelona
 
 \tableofcontents
 
-\chapter{Introducció}
+\chapter*{Introducció}
 
 Aquest text és una introducció a la física clàssica per al primer curs d'un grau de l'àrea de les ciències biomèdiques. Està dividit en tres parts principals: fluids, termodinàmica i ones. Cada part consta d'un o més capítols. Tot i que els conceptes físics que s'hi tracten són d'ús general en qualsevol ciència o enginyeria, en aquest text s'ha tractat d'emfatitzar la seva rellevància en el món dels éssers vius.
 
@@ -769,7 +769,7 @@ A la natura sovint ens trobem situacions en les quals un objecte sòlid s'ha de 
 Quan la velocitat és baixa ($N_R < 1$), s'observa que la força d'arrossegament és proporcional a la velocitat $v$ del cos. Aquest seria el cas, per exemple, d'un bacteri que es desplaça a través de l'aigua. En general, podem escriure
 %
 \begin{equation}
-    \boxed{F_\text{arr} = C \eta L v}
+    F_\text{arr} = C \eta L v
     \label{eqn:ArrossegamentBaixaV}
 \end{equation}
 %
@@ -778,6 +778,13 @@ on $L$ és alguna longitud característica de l'objecte, com ara la mida del bac
 \begin{equation}
     \boxed{F_\text{Stokes} = 6 \pi \eta R v}
     \label{eqn:Stokes}
+\end{equation}
+%
+La potència necessària per tal de moure la partícula a velocitat constant, contrarestant la força de Stokes estarà donada per
+%
+\begin{equation}
+    \boxed{\mathcal{P} = F \, v = 6 \pi \eta R v^2}
+    \label{eqn:PotenciaLaminar}
 \end{equation}
 %
 La llei de Stokes ens permet estudiar a quina velocitat sedimentaran les petites partícules, que suposarem esfèriques, a través d'un fluid. Inicialment, si les partícules són més denses que el fluid que les envolta, patiran una acceleració cap avall a causa de la gravetat. Tot i això, quan la seva velocitat sigui suficientment gran, la força d'arrossegament serà suficientment gran per compensar el pes aparent de la partícula, és a dir el pes real menys l'empenyiment d'Arquimedes. A partir d'aquest moment, la partícula caurà a velocitat constant: la {\bf velocitat de sedimentació} $v_s$. Per trobar aquesta velocitat hem de considerar que la suma de les tres forces que actuen sobre la partícula (pes, empenyiment i arrossegament) es cancel·len entre elles. Anomenarem $\rho_p$ a la densitat de la partícula, de radi $R$, i $\rho_f$ a la densitat del fluid que l'envolta.
@@ -789,10 +796,10 @@ La llei de Stokes ens permet estudiar a quina velocitat sedimentaran les petites
 Utilitzant que el volum de l'esfera és $V = \frac43 \pi R^3$, tenim que
 %
 \begin{equation}
-    v_s = \frac{2gR^2}{9\eta} (\rho_p - \rho_f)\, .
+    \boxed{v_s = \frac{2gR^2}{9\eta\phi} (\rho_p - \rho_f)}
 \end{equation}
 %
-Si el fluid que envolta la partícula té una densitat molt més baixa que la pròpia partícula, com per exemple un gra de pol·len que cau a través de l'aire, podem aproximar $\rho_f \approx 0$. En aquest cas, la velocitat de sedimentació s'anomena {\bf velocitat límit} $v_l$ o velocitat terminal, i ve donada per
+on $\phi$ s'anomena coeficient de fregament i té un valor $\phi = 1$ en el cas de partícules esfèriques. Si el fluid que envolta la partícula té una densitat molt més baixa que la pròpia partícula, com per exemple un gra de pol·len que cau a través de l'aire, podem aproximar $\rho_f \approx 0$. En aquest cas, la velocitat de sedimentació s'anomena {\bf velocitat límit} $v_l$ o velocitat terminal, i ve donada per
 %
 \begin{equation}
     v_l = \frac{m g}{6 \pi \eta R}\, .
@@ -809,7 +816,14 @@ Quan les velocitats són altes ($N_R > 1000$), l'arrossegament sol estar domina 
     \label{eqn:Sustentacio3}
 \end{equation}
 %
-on $S_f$ és la superfície frontal de l'ala i $C_x$ és un coeficient aerodinàmic que dependrà de la seva forma.
+on $S_f$ és la superfície frontal de l'ala i $C_x$ és un coeficient aerodinàmic que dependrà de la seva forma. En aquest cas la potència que es consumeix en moure la partícula a velocitat constant serà
+%
+\begin{equation}
+    \boxed{\mathcal{P} = F \, v = \frac12 \rho \, C_x \,  S_f \, v^3 }
+    \label{eqn:PotenciaTurbulent}
+\end{equation}
+%
+Podem veure que la potència consumida és proporcional a $v^2$ en el cas del flux laminar (\ref{eqn:PotenciaLaminar}), i proporcional a $v^3$ en el cas de flux turbulent (\ref{eqn:PotenciaTurbulent}).
 
 \subsection{El teorema de la vieira}
 
